@@ -19,15 +19,16 @@ module.exports = function (times) {
       return this;
     },
     do: function (cb) {
-      while (tick.count < config.stop) {
-        if (tick.first) {
-          tick.first = false;
-          tick.value = config.start;
-        }
+      tick.value = config.start;
 
+      while (tick.count < config.stop) {
         tick.count++;
         cb(tick, config);
         tick.value += config.step;
+
+        if (tick.first) {
+          tick.first = false;
+        }
       }
     }
   };
