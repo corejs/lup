@@ -14,7 +14,7 @@ loop(3).do(function (val) {
 });
 ```
 
->   0
+    0
     1
     2
 
@@ -28,7 +28,7 @@ loop(3).start(1).do(function (val, idx) {
 });
 ```
 
->   [0] 1
+    [0] 1
     [1] 2
     [2] 3
 
@@ -42,7 +42,7 @@ loop('abc').do(function (val) {
 });
 ```
 
->   a
+    a
     b
     c
 
@@ -56,7 +56,7 @@ loop(10).step(3).do(function (val) {
 });
 ```
 
->   0
+    0
     3
     6
     9
@@ -71,7 +71,7 @@ loop([2,4,6]).do(function (val) {
 });
 ```
 
->   2
+    2
     4
     6
 
@@ -85,7 +85,7 @@ loop().do(function (idx) {
 });
 ```
 
->   1
+    1
     2
     3
     ...
@@ -101,7 +101,7 @@ loop(rnd(3).next).do(function (val, idx) {
 });
 ```
 
->   [0] *(unknown: 0, 1 or 2)*
+    [0] *(unknown: 0, 1 or 2)*
     [1] *(unknown: 0, 1 or 2)*
     [2] *(unknown: 0, 1 or 2)*
     ...
