@@ -25,10 +25,7 @@ module.exports = function (times) {
         tick.count++;
         cb(tick, config);
         tick.value += config.step;
-
-        if (tick.first) {
-          tick.first = false;
-        }
+        tick.first && delete tick.first;
       }
     }
   };
