@@ -1,6 +1,6 @@
 # loop
 
-Functional iteration
+Sync loop handler
 
 # Usage
 

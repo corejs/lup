@@ -1,7 +1,7 @@
 {
   "name": "lup",
   "version": "0.1.0",
-  "description": "simple loop handler",
+  "description": "sync loop handler",
   "main": "lup.js",
   "dependencies": {},
   "repository": {
@@ -9,6 +9,7 @@
     "url": "https://github.com/corejs/lup.git"
   },
   "keywords": [
+    "sync",
     "loop"
   ],
   "author": "Pau Fracés",
