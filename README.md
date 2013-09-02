@@ -7,7 +7,7 @@ Sync lup handler
 ```js
 var lup = require('lup');
 
-lup(3).start(5).do(function (tick, config) {
+lup(3).start(5).do(function (tick) {
   console.log(tick);
 });
 ```
