@@ -23,7 +23,7 @@ module.exports = function (times) {
 
       while (tick.count < config.stop) {
         tick.count++;
-        cb(tick, config);
+        cb(tick);
         tick.value += config.step;
         tick.first && delete tick.first;
       }
