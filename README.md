@@ -37,9 +37,17 @@ lup().do(function (tick) {
 var lup = require('lup');
 
 lup().til(10).step(2).do(function (tick) {
-  console.log(tick);
+  console.log(tick.value);
 });
 ```
+
+    0
+    2
+    4
+    6
+    8
+
+# To-Do
 
 ## strings as char arrays
 
