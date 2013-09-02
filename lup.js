@@ -6,7 +6,7 @@ module.exports = function (times) {
       },
       tick = {
         count: 0,
-        value: config.start
+        first: true
       };
 
   return {
@@ -20,6 +20,11 @@ module.exports = function (times) {
     },
     do: function (cb) {
       while (tick.count < config.stop) {
+        if (tick.first) {
+          tick.first = false;
+          tick.value = config.start;
+        }
+
         tick.count++;
         cb(tick, config);
         tick.value += config.step;
