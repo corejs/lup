@@ -1,0 +1,16 @@
+{
+  "name": "lup",
+  "version": "0.1.0",
+  "description": "simple loop handler",
+  "main": "lup.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corejs/lup.git"
+  },
+  "keywords": [
+    "loop"
+  ],
+  "author": "Pau Fracés",
+  "license": "BSD"
+}
