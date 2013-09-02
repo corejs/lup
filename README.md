@@ -101,8 +101,8 @@ loop(rnd(3).next).do(function (val, idx) {
 });
 ```
 
-    [0] *(unknown: 0, 1 or 2)*
-    [1] *(unknown: 0, 1 or 2)*
-    [2] *(unknown: 0, 1 or 2)*
+    [0] (unknown: 0, 1 or 2)
+    [1] (unknown: 0, 1 or 2)
+    [2] (unknown: 0, 1 or 2)
     ...
 
