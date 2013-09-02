@@ -1,11 +1,12 @@
-module.exports = function (control) {
+module.exports = function (times) {
   var config = {
         start: 0,
         step: 1,
-        stop: control
+        stop: times
       },
       tick = {
-        count: 0
+        count: 0,
+        value: config.start
       };
 
   return {
@@ -18,10 +19,10 @@ module.exports = function (control) {
       return this;
     },
     do: function (cb) {
-      for (var i = config.start; i < config.stop; i += config.step) {
+      while (tick.count < config.stop) {
         tick.count++;
-        tick.index = i;
         cb(tick, config);
+        tick.value += config.step;
       }
     }
   };
