@@ -2,7 +2,8 @@ module.exports = function (times) {
   var config = {
         start: 0,
         step: 1,
-        stop: times
+        stop: times || Infinity,
+        til: Infinity
       },
       tick = {
         count: 0,
@@ -18,10 +19,15 @@ module.exports = function (times) {
       config.step = step;
       return this;
     },
+    til: function (til) {
+      config.til = til;
+      return this;
+    },
     do: function (cb) {
       tick.value = config.start;
 
-      while (tick.count < config.stop) {
+      while (tick.count < config.stop &&
+             tick.value < config.til) {
         tick.count++;
         cb(tick);
         tick.value += config.step;

@@ -1,48 +1,45 @@
 # lup
 
-Sync lup handler
+Sync loop handler
 
 # Usage
 
 ```js
 var lup = require('lup');
 
-lup(3).start(5).do(function (tick) {
+lup(3).start(5).step(2).do(function (tick) {
   console.log(tick);
 });
 ```
 
     { count: 1, first: true, value: 5 }
-    { count: 2, value: 6 }
-    { count: 3, value: 7 }
+    { count: 2, value: 7 }
+    { count: 3, value: 9 }
 
-## fixed
+## infinite loop
 
 ```js
 var lup = require('lup');
 
-lup(3).do(function (val) {
-  console.log(val);
+lup().do(function (tick) {
+  console.log(tick.count);
 });
 ```
 
-    0
     1
     2
+    3
+    ...
 
-## specify start point
+## loop until max number
 
 ```js
 var lup = require('lup');
 
-lup(3).start(1).do(function (val, idx) {
-  console.log('[' + idx + '] ' + val);
+lup().til(10).step(2).do(function (tick) {
+  console.log(tick);
 });
 ```
-
-    [0] 1
-    [1] 2
-    [2] 3
 
 ## strings as char arrays
 
@@ -58,21 +55,6 @@ lup('abc').do(function (val) {
     b
     c
 
-## specify step size
-
-```js
-var lup = require('lup');
-
-lup(10).step(3).do(function (val) {
-  console.log(val);
-});
-```
-
-    0
-    3
-    6
-    9
-
 ## arrays
 
 ```js
@@ -86,21 +68,6 @@ lup([2,4,6]).do(function (val) {
     2
     4
     6
-
-## infinite lup
-
-```js
-var lup = require('lup');
-
-lup().do(function (idx) {
-  console.log('lup count: ' + (idx + 1));
-});
-```
-
-    1
-    2
-    3
-    ...
 
 ## lup through iterators
 
@@ -117,4 +84,3 @@ lup(rnd(3).next).do(function (val, idx) {
     [1] (unknown: 0, 1 or 2)
     [2] (unknown: 0, 1 or 2)
     ...
-
