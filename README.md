@@ -1,15 +1,33 @@
-# loop
+# lup
 
-Sync loop handler
+Sync lup handler
 
 # Usage
+
+```js
+var lup = require('lup');
+
+lup(3).start(5).do(function (tick, config) {
+  if (tick.first) {
+    console.log(config);
+  }
+
+  console.log(tick);
+});
+```
+
+    $ node script.js
+    > { start: 5, step: 1, stop: 3 }
+    > { count: 1, first: true, value: 5 }
+    > { count: 2, value: 6 }
+    > { count: 3, value: 7 }
 
 ## fixed
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop(3).do(function (val) {
+lup(3).do(function (val) {
   console.log(val);
 });
 ```
@@ -21,9 +39,9 @@ loop(3).do(function (val) {
 ## specify start point
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop(3).start(1).do(function (val, idx) {
+lup(3).start(1).do(function (val, idx) {
   console.log('[' + idx + '] ' + val);
 });
 ```
@@ -35,9 +53,9 @@ loop(3).start(1).do(function (val, idx) {
 ## strings as char arrays
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop('abc').do(function (val) {
+lup('abc').do(function (val) {
   console.log(val);
 });
 ```
@@ -49,9 +67,9 @@ loop('abc').do(function (val) {
 ## specify step size
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop(10).step(3).do(function (val) {
+lup(10).step(3).do(function (val) {
   console.log(val);
 });
 ```
@@ -64,9 +82,9 @@ loop(10).step(3).do(function (val) {
 ## arrays
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop([2,4,6]).do(function (val) {
+lup([2,4,6]).do(function (val) {
   console.log(val);
 });
 ```
@@ -75,13 +93,13 @@ loop([2,4,6]).do(function (val) {
     4
     6
 
-## infinite loop
+## infinite lup
 
 ```js
-var loop = require('loop');
+var lup = require('lup');
 
-loop().do(function (idx) {
-  console.log('loop count: ' + (idx + 1));
+lup().do(function (idx) {
+  console.log('lup count: ' + (idx + 1));
 });
 ```
 
@@ -90,13 +108,13 @@ loop().do(function (idx) {
     3
     ...
 
-## loop through iterators
+## lup through iterators
 
 ```js
-var loop = require('loop'),
+var lup = require('lup'),
     rnd = require('random');
 
-loop(rnd(3).next).do(function (val, idx) {
+lup(rnd(3).next).do(function (val, idx) {
   console.log('[' + idx + '] ' + val);
 });
 ```
