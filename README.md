@@ -49,20 +49,6 @@ lup().til(10).step(2).do(function (tick) {
 
 # To-Do
 
-## strings as char arrays
-
-```js
-var lup = require('lup');
-
-lup('abc').do(function (val) {
-  console.log(val);
-});
-```
-
-    a
-    b
-    c
-
 ## arrays
 
 ```js
@@ -77,7 +63,7 @@ lup([2,4,6]).do(function (val) {
     4
     6
 
-## lup through iterators
+## loop through iterators
 
 ```js
 var lup = require('lup'),
