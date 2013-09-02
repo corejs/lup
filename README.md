@@ -8,19 +8,13 @@ Sync lup handler
 var lup = require('lup');
 
 lup(3).start(5).do(function (tick, config) {
-  if (tick.first) {
-    console.log(config);
-  }
-
   console.log(tick);
 });
 ```
 
-    $ node script.js
-    > { start: 5, step: 1, stop: 3 }
-    > { count: 1, first: true, value: 5 }
-    > { count: 2, value: 6 }
-    > { count: 3, value: 7 }
+    { count: 1, first: true, value: 5 }
+    { count: 2, value: 6 }
+    { count: 3, value: 7 }
 
 ## fixed
 
